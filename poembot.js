@@ -181,8 +181,18 @@ function buildAPoem() {
     return outputPoem;
 }
 
+function addCode() {
+    // document.getElementById("#corpus").innerHTML += ' ' + document.getElementById("#myShellId").innerHTML
+    $("#corpus").append($("#myShellId").text())
+    console.log('add it to corpus')
+}
+
 document.addEventListener("DOMContentLoaded", function() {    
     $("#meInputId").on("click", function(){
         pushPoem(buildAPoem());
+    });
+
+    $("#addcorpId").on("click", function(){
+        addCode();
     });
 });
